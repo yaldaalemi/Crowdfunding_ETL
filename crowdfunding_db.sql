@@ -10,14 +10,14 @@ CREATE TABLE subcategory (
 	primary key (subcategory_id)
 );
 select * from subcategory
-CREATE TABLE contacts_info (
+CREATE TABLE contacts (
     contact_id int   NOT NULL,
     first_name varchar   NOT NULL,
     last_name varchar   NOT NULL,
     email varchar   NOT NULL,
 	primary key (contact_id)
 );
-select * from contacts_info
+select * from contacts
 CREATE TABLE campaign (
     cf_id int   NOT NULL,
     contact_id int   NOT NULL,
@@ -36,6 +36,6 @@ CREATE TABLE campaign (
 	primary key (cf_id),
 	FOREIGN KEY(category_id) REFERENCES category (category_id),
 	FOREIGN KEY(subcategory_id) REFERENCES subcategory (subcategory_id),
-    FOREIGN KEY(contact_id) REFERENCES contacts_info (contact_id) 
+    FOREIGN KEY(contact_id) REFERENCES contacts (contact_id) 
 );
 select * from campaign

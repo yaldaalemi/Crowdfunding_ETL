@@ -38,12 +38,12 @@ CREATE TABLE "campaign" (
      )
 );
 
-CREATE TABLE "contacts_info" (
+CREATE TABLE "contacts" (
     "contact_id" int64   NOT NULL,
     "first_name" object   NOT NULL,
     "last_name" object   NOT NULL,
     "email" object   NOT NULL,
-    CONSTRAINT "pk_contacts_info" PRIMARY KEY (
+    CONSTRAINT "pk_contacts" PRIMARY KEY (
         "contact_id"
      )
 );
@@ -54,6 +54,6 @@ REFERENCES "campaign" ("category_id");
 ALTER TABLE "subcategory" ADD CONSTRAINT "fk_subcategory_subcategory_id" FOREIGN KEY("subcategory_id")
 REFERENCES "campaign" ("subcategory_id");
 
-ALTER TABLE "contacts_info" ADD CONSTRAINT "fk_contacts_info_contact_id" FOREIGN KEY("contact_id")
+ALTER TABLE "contacts" ADD CONSTRAINT "fk_contacts_contact_id" FOREIGN KEY("contact_id")
 REFERENCES "campaign" ("contact_id");
 
